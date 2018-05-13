@@ -1,6 +1,6 @@
 <script>
     $(document).ready(function()
     {
-        swal('ABOUT','','success');
+        //swal('ABOUT','','success');
     });
 </script>

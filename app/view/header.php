@@ -1,29 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <?php include CUSTOM . 'theme.php'; ?>
+        <?php include CUSTOM . 'theme.php';
+        $action = Application::getAction();
+        ?>
     </head>
+    <style>
+        .fien{
+            background-color: red;
+        }
+        .area{
+            height: 20px;
+            widows: 100%;
+        }
+    </style>
     <body>
-        <h1>This is Header</h1>
 
-        <nav class="nav navbar-default">
+        <nav class="nav navbar-default navbar-fixed-top">
             <div class="navbar-header">
                 <a href="#" class="navbar-brand">LOGO</a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mydropdown">
                     <span class="icon-bar"></span>
-                     <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
                 </button>
             </div>
             <div class="container">
 
                 <div class="collapse navbar-collapse" id="mydropdown">
                     <ul class="nav navbar-nav">
-                        <li>
-                            <a href="/omsin2/home/index">HOME</a>
+                        <li <?php echo ($action[2] . '/' . $action[3] == 'home/index' ? 'class=active' : '') ?>>
+                            <a href="/<?php echo DOMAIN; ?>/home/index">HOME</a>
                         </li>
-                        <li>
-                            <a href="/omsin2/home/about">ABOUT</a>
+                        <li <?php echo ($action[2] . '/' . $action[3] == 'product/index' ? 'class=active' : '') ?>>
+                            <a href="/<?php echo DOMAIN; ?>/product/index">PRODUCT</a>
+                        </li>
+                        <li <?php echo ($action[2] . '/' . $action[3] == 'weboard/index' ? 'class=active' : '') ?>>
+                            <a href="/<?php echo DOMAIN; ?>/weboard/index">WEBOARD</a>
+                        </li>
+                        <li <?php echo ($action[2] . '/' . $action[3] == 'about/contact' ? 'class=active' : '') ?>>
+                            <a href="/<?php echo DOMAIN; ?>/about/contact">CONTACT</a>
+                        </li>
+                        <li <?php echo ($action[2] . '/' . $action[3] == 'about/about' ? 'class=active' : '') ?>>
+                            <a href="/<?php echo DOMAIN; ?>/about/about">ABOUT</a>
                         </li>
                         <li>
                             <a class="dropdown-toggle" id="dropdowns1" data-toggle="dropdown" href="#">DROPDOWN <span class="caret"></span></a>
@@ -45,4 +64,9 @@
                     </ul>
                 </div>
             </div>
+
         </nav>
+        
+        <div class="area"></div>
+        <div class="area"></div
+        <?php include CUSTOM.'slider.php'; ?>

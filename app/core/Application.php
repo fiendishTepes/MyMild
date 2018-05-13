@@ -2,7 +2,7 @@
 
 class Application {
 
-    protected $controller = 'home'; //Class
+    protected $controller = 'homeController'; //Class
     protected $action = 'index'; //Method
     protected $prams = [];
     
@@ -49,12 +49,11 @@ class Application {
     protected function getUrl()
     {
         $require = $_SERVER['REQUEST_URI'];
-        //var_dump($require);
         if(!empty($require))
         {
            $url = explode('/', trim($require));
-           $this->controller = isset($url[2]);
-           $this->action = isset($url[3]);
+           $this->controller = $url[2];
+           $this->action = $url[3];
            unset($url[2],$url[3]);
            $this->prams = !empty($url) ? array_values($url) : [];
         }

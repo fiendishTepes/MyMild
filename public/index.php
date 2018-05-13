@@ -1,4 +1,5 @@
 <?php 
+define('DOMAIN','MyP1');
 define('ROOT', dirname(__DIR__) . DIRECTORY_SEPARATOR);
 define('APP', ROOT . 'app' . DIRECTORY_SEPARATOR);
 define('VIEW', ROOT . 'app' . DIRECTORY_SEPARATOR . 'view' . DIRECTORY_SEPARATOR);
@@ -18,4 +19,4 @@ spl_autoload_register('spl_autoload',false); //ใช้โหลดไฟล์
 include VIEW . 'header.php';
 new Application;
 include VIEW . 'footer.php';
-?>
+
